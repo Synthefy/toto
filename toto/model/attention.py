@@ -3,6 +3,7 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/)
 # Copyright 2025 Datadog, Inc.
 
+import logging
 import warnings
 from enum import Enum
 from typing import TYPE_CHECKING, Optional, Union
@@ -16,11 +17,13 @@ from ..model.rope import TimeAwareRotaryEmbedding
 if TYPE_CHECKING:
     from ..model.util import KVCache  # Import only for type checking
 
+log = logging.getLogger(__name__)
 
 try:
     from xformers.ops import LowerTriangularMask, memory_efficient_attention
 
     XFORMERS_AVAILABLE = True
+    log.info("xFormers Memory-Efficient Attention available.")
 except ImportError:
     warnings.warn(
         "xFormers Memory-Efficient Attention not available. "
