@@ -9,7 +9,7 @@ gluonts[torch]==0.15.1
 jaxtyping==0.2.29
 mypy==1.11.1
 pandas==2.2.3
-pytest==8.3.5
+pytest>=8.3.5
 pytest-env==1.1.5
 rotary-embedding-torch==0.8.6
 scikit-learn==1.5.0
