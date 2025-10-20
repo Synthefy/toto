@@ -128,7 +128,7 @@ def get_parser():
     parser.add_argument(
         "--checkpoint-path",
         type=str,
-        default="Datadog/Toto-Open-Base-1.0",
+        default=os.path.expanduser("~/models--Synthefy--tt-Open-Base-1.0"),
         help="Either the `model_id` (string) of a model hosted on the Hub, e.g. `bigscience/bloom`."
         "Or a path to a `directory` containing model weights saved using [`~transformers.PreTrainedModel.save_pretrained`], e.g., `../path/to/my_model_directory/`.",
     )

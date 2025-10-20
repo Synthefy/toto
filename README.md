@@ -72,7 +72,11 @@ from toto.inference.forecaster import TotoForecaster
 from toto.model.toto import Toto
 
 # Load the pre-trained model
+# Option 1: Load from Hugging Face Hub
 toto = Toto.from_pretrained('Datadog/Toto-Open-Base-1.0')
+
+# Option 2: Load from local directory (if you've set up the local model)
+# toto = Toto.from_pretrained('~/models--Synthefy--tt-Open-Base-1.0')
 toto.to('cuda')  # Move to GPU
 
 # Optionally compile the model for faster inference
